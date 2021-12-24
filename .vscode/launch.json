@@ -10,7 +10,7 @@
             "cwd": "${fileDirname}",
             "request": "launch",
             "program": "${file}",
-            "console": "externalTerminal"
+            // "console": "externalTerminal"
         }
     ]
 }
