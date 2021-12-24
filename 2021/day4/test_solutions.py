@@ -1,4 +1,4 @@
-from solution import read_file, format_data, is_win, bingo_sim, solution
+from solution import read_file, format_data, is_win, bingo_sim, part1_solution, part2_solution
 
     # Arrange
     
@@ -68,8 +68,22 @@ def test_part1_solution():
 
     # Act
 
-    result = solution(_input)
+    result = part1_solution(_input)
     
     # Assert
 
     assert result == 4512
+
+def test_part2_solution():
+    # Arrange
+
+    filename = "sample_input.txt"
+    _input = read_file(filename)
+
+    # Act
+
+    result = part2_solution(_input)
+    
+    # Assert
+
+    assert result == 1924

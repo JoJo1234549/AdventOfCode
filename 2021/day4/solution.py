@@ -65,4 +65,26 @@ def part1_solution(_input):
     score = sum(board_numbers) * numbers[quickest[1]]
     return score
 
-print(solution(read_file("input.txt")))
+def part2_solution(_input):
+    numbers, boards = format_data(_input)
+    slowest = [None, None]
+    for board in boards:
+        sim_board, win_index = bingo_sim(numbers, board)
+        if not slowest[1]:
+            slowest = [board, win_index]
+        if win_index and win_index > slowest[1]:
+            slowest = [board, win_index]
+    
+    board_numbers = sum(slowest[0], [])
+    for number in numbers[:slowest[1] + 1]:
+        try:
+            board_numbers.remove(number)
+        except ValueError:
+            pass
+    
+    score = sum(board_numbers) * numbers[slowest[1]]
+    return score
+
+print(part1_solution(read_file("input.txt")))
+
+print(part2_solution(read_file("input.txt")))
