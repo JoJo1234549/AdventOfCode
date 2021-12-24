@@ -1,4 +1,4 @@
-from solution import read_file, format_data, is_win, bingo_sim, part1_solution, part2_solution
+from .solution import read_file, format_data, is_win, bingo_sim, part1_solution, part2_solution
 
     # Arrange
     
